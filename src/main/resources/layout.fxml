@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<GridPane alignment="center" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+          prefHeight="550.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="app.controller.AppController">
+    <padding>
+        <Insets bottom="15.0" left="10.0" right="10.0" top="15.0"/>
+    </padding>
+    <columnConstraints>
+        <ColumnConstraints/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+    </rowConstraints>
+    <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.hgrow="NEVER"
+          GridPane.rowIndex="6" GridPane.valignment="CENTER" GridPane.vgrow="NEVER">
+        <children>
+            <Button fx:id="prevButton" contentDisplay="CENTER" mnemonicParsing="false" text="&lt; Previous"
+                    textAlignment="CENTER">
+                <HBox.margin>
+                    <Insets bottom="1.0" left="1.0" right="1.0" top="1.0"/>
+                </HBox.margin>
+            </Button>
+        <Separator orientation="VERTICAL">
+            <HBox.margin>
+                <Insets bottom="15.0" left="3.0" top="15.0"/>
+            </HBox.margin>
+            <opaqueInsets>
+                <Insets/>
+            </opaqueInsets>
+        </Separator>
+            <Button fx:id="playButton" mnemonicParsing="false" text="Play" textAlignment="CENTER">
+                <HBox.margin>
+                    <Insets bottom="1.0" left="1.0" right="1.0" top="1.0"/>
+                </HBox.margin>
+            </Button>
+            <Button fx:id="pauseButton" mnemonicParsing="false" text="Pause">
+                <HBox.margin>
+                    <Insets bottom="1.0" left="1.0" right="1.0" top="1.0"/>
+                </HBox.margin>
+            </Button>
+            <Button fx:id="stopButton" mnemonicParsing="false" text="Stop">
+                <HBox.margin>
+                    <Insets bottom="1.0" left="1.0" right="1.0" top="1.0"/>
+                </HBox.margin>
+            </Button>
+        <Separator layoutX="138.0" layoutY="25.0" orientation="VERTICAL">
+            <opaqueInsets>
+                <Insets/>
+            </opaqueInsets>
+            <HBox.margin>
+                <Insets bottom="15.0" left="3.0" top="15.0"/>
+            </HBox.margin>
+        </Separator>
+            <Button fx:id="nextButton" mnemonicParsing="false" text="Next &gt;">
+                <HBox.margin>
+                    <Insets bottom="1.0" left="1.0" right="1.0" top="1.0"/>
+                </HBox.margin>
+            </Button>
+            <Region prefHeight="50.0" prefWidth="10.0"/>
+        </children>
+        <opaqueInsets>
+            <Insets/>
+        </opaqueInsets>
+        <GridPane.margin>
+            <Insets/>
+        </GridPane.margin>
+    </HBox>
+    <ListView fx:id="listView" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.rowSpan="3">
+        <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </GridPane.margin>
+        <padding>
+            <Insets bottom="5.0" left="10.0" right="10.0" top="5.0"/>
+        </padding>
+    </ListView>
+    <HBox alignment="CENTER" GridPane.rowIndex="7">
+        <children>
+            <Label fx:id="songCurrentTimeLabel" text="00:00">
+                <font>
+                    <Font size="13.0"/>
+                </font>
+            </Label>
+            <Separator orientation="VERTICAL">
+                <padding>
+                    <Insets left="3.0" right="5.0"/>
+                </padding>
+                <HBox.margin>
+                    <Insets/>
+                </HBox.margin>
+            </Separator>
+            <Slider fx:id="progressSlider" blockIncrement="1.0" majorTickUnit="5.0" prefWidth="270.0">
+                <HBox.margin>
+                    <Insets/>
+                </HBox.margin>
+            </Slider>
+            <Separator orientation="VERTICAL">
+                <HBox.margin>
+                    <Insets/>
+                </HBox.margin>
+                <padding>
+                    <Insets left="3.0" right="3.0"/>
+                </padding>
+            </Separator>
+            <Label fx:id="songTotalTimeLabel" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" text="00:00">
+                <font>
+                    <Font size="13.0"/>
+                </font>
+            </Label>
+        </children>
+    </HBox>
+    <HBox alignment="CENTER" prefHeight="18.0" prefWidth="380.0" GridPane.rowIndex="5">
+        <children>
+        <ImageView pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@icons/volume.png"/>
+            </image>
+            <HBox.margin>
+                <Insets left="5.0" right="2.0"/>
+            </HBox.margin>
+        </ImageView>
+            <Slider fx:id="volumeSlider" value="50.0" HBox.hgrow="SOMETIMES">
+                <opaqueInsets>
+                    <Insets/>
+                </opaqueInsets>
+                <HBox.margin>
+                    <Insets bottom="5.0" right="5.0" top="5.0"/>
+                </HBox.margin>
+                <padding>
+                    <Insets right="5.0"/>
+                </padding>
+            </Slider>
+            <ToggleButton fx:id="muteButton" alignment="CENTER_RIGHT" mnemonicParsing="false" text="Mute"
+                          textAlignment="CENTER">
+                <HBox.margin>
+                    <Insets bottom="1.0" left="1.0" right="1.0" top="1.0"/>
+                </HBox.margin>
+            </ToggleButton>
+        <Separator orientation="VERTICAL" prefHeight="200.0">
+            <HBox.margin>
+                <Insets bottom="10.0" left="5.0" right="5.0" top="10.0"/>
+            </HBox.margin>
+        </Separator>
+            <ToggleButton fx:id="repeatButton" alignment="CENTER_RIGHT" contentDisplay="CENTER" mnemonicParsing="false"
+                          text="Repeat" textAlignment="CENTER">
+                <HBox.margin>
+                    <Insets bottom="1.0" left="1.0" right="1.0" top="1.0"/>
+                </HBox.margin>
+            </ToggleButton>
+        <ToggleButton fx:id="shuffleButton" mnemonicParsing="false" text="Shuffle"/>
+        </children>
+    </HBox>
+    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+        <children>
+          <ImageView pickOnBounds="true" preserveRatio="true">
+              <image>
+                  <Image url="@icons/note.png"/>
+              </image>
+              <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+              </HBox.margin>
+          </ImageView>
+            <Label fx:id="currentSongInfoLabel" text="Artist:&#10;Title:&#10;Length:" HBox.hgrow="ALWAYS">
+                <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                </padding>
+                <font>
+                    <Font size="14.0"/>
+                </font>
+            </Label>
+        </children>
+    </HBox>
+</GridPane>
